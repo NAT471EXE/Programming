@@ -3,7 +3,7 @@ import os
 from pathlib import Path
 import pandas as pd
 
-def merge_csv_files(start_path: Path, indent: int = 0, extension=".csv"):
+def concat_csv_files(start_path: Path, indent: int = 0, extension=".csv"):
     dataframes = {}
     df_count = 1
     
@@ -24,7 +24,7 @@ def merge_csv_files(start_path: Path, indent: int = 0, extension=".csv"):
 path = Path("/home/user/Documents")
 
 if path.exists():
-    dataframes = merge_csv_files(path)
+    dataframes = concat_csv_files(path)
     combined = pd.concat(dataframes, axis=0, ignore_index=False)
     print(combined.head())
 else:
